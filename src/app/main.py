@@ -1,17 +1,15 @@
 from fastapi import FastAPI
+from routers import coordinates, users
+from database import engine
 
+
+
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-@app.get("/find_point") 
-def get_polygon(data):
-    pass
+app.include_router(coordinates.router)
+app.include_router(users.router)
 
-@app.put("/polygon") 
-def get_polygon(data):
-    pass
 
-@app.delete("/polygon") 
-def get_polygon(data):
-    pass
 

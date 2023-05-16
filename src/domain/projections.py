@@ -8,17 +8,10 @@ class ProjectionBase(BaseModel):
     long_max: float
     state_province: str
 
-
-class ProjectionLat(ProjectionBase):
-    lat_min: float
-    lat_max: float
+    class Config:
+        orm_mode = True
 
 
-class ProjectionLong(ProjectionBase):
-    long_min: float
-    long_max: float
-
-
-class ProjectionPlace(ProjectionBase)
+class ProjectionPlace(ProjectionBase):
     state_province: str
 
